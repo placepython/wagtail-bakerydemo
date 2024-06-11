@@ -1,0 +1,1 @@
+from bakerydemo.wsgi import application

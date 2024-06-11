@@ -1,0 +1,30 @@
+[project]
+name = "bakerydemo"
+version = "1.0.0"
+description = "BackeryDemo est le projet officiel pour montrer les capacités de Wagtail"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "argon2-cffi>=23.1.0",
+    "django>=5.1.2",
+    "django-csp>=3.8",
+    "django-debug-toolbar>=4.4.6",
+    "django-environ>=0.11.2",
+    "django-extensions>=3.2.3",
+    "django-redis>=5.4.0",
+    "pymysql>=1.1.1",
+    "wagtail>=6.2.2",
+    "wagtail-font-awesome-svg>=1.0.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=24.10.0",
+    "ruff>=0.6.9",
+    "curlylint>=0.13.1",
+    "djhtml>=3.0.6",
+]
+production = [
+    "elasticsearch>=8.15.1",
+    "django-basic-auth-ip-whitelist>=0.6.0",
+]

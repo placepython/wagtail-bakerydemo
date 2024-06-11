@@ -1,0 +1,30 @@
+services:
+    mysql:
+        container_name: mysql_bakerydemo_container_59901
+        image: mariadb:10.6
+        working_dir: /app
+        command: 
+            - '--character-set-server=utf8mb4'
+            - '--collation-server=utf8mb4_unicode_ci'
+        restart: always
+        ports:
+            - 59901:3306
+        environment:
+            - MYSQL_DATABASE=bakerydemo
+            - MYSQL_ROOT_PASSWORD=bakerydemo
+            - MYSQL_USER=bakerydemo
+            - MYSQL_PASSWORD=bakerydemo
+        volumes:
+            - mysql_bakerydemo_volume_59901:/var/lib/mysql
+
+    redis:
+        image: docker.io/redis:7
+        container_name: redis_bakerydemo_container_56379
+        ports:
+            - 56379:6379
+        volumes:
+            - redis_bakerydemo_volume_56379:/data
+
+volumes:
+    mysql_bakerydemo_volume_59901:
+    redis_bakerydemo_volume_56379:
