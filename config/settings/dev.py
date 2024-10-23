@@ -80,6 +80,14 @@ DEBUG_TOOLBAR_CONFIG = {
     "SHOW_TEMPLATE_CONTEXT": True,
 }
 
+# cette configuration est utilisée pour configurer Django Vite afin de gérer
+# le développement front-end.
+DJANGO_VITE = {
+    "default": {
+        "dev_mode": env.bool("DJANGO_VITE_DEV_MODE", default=DEBUG),
+    }
+}
+
 DJANGO_ADMIN_URL = env("DJANGO_ADMIN_URL", default="django-admin/")
 WAGTAIL_ADMIN_URL = env("WAGTAIL_ADMIN_URL", default="admin/")
 

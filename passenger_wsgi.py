@@ -1,1 +1,1 @@
-from bakerydemo.wsgi import application
+from config.wsgi import application  # noqa

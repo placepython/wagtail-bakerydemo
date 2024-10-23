@@ -1,0 +1,323 @@
+/* Homepage */
+
+/* #region -- Hero -- */
+.homepage .hero {
+    margin: 0;
+    padding: 200px 0 30px;
+  }
+  
+  .homepage .home-hero {
+    margin-bottom: 0;
+    padding-bottom: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .homepage .home-hero {
+      padding-bottom: 140px;
+    }
+  }
+  
+  .homepage .home-hero .lead {
+    font-family: var(--font--primary);
+    font-weight: 400;
+    color: var(--white);
+    margin: 40px auto;
+    font-size: 1.625rem;
+    line-height: 1.15;
+  }
+  
+  @media (min-width: 768px) {
+    .homepage .home-hero .lead {
+      font-size: 2rem;
+      line-height: 1.31;
+    }
+  }
+  
+  .homepage .home-hero .hero-cta-link {
+    color: var(--white);
+    background-color: var(--orange);
+    font-weight: 700;
+    padding: 15px 25px;
+    display: inline-block;
+    vertical-align: middle;
+    transition:
+      color ease 0.1s,
+      background-color ease 0.1s;
+  }
+  
+  .homepage .home-hero .hero-cta-link:hover {
+    background-color: var(--white);
+    color: var(--dark-orange);
+  }
+  
+  /* #endregion */
+  
+  /* #region -- Body -- */
+  .homepage .streamfield {
+    background-color: var(--cream);
+  }
+  
+  .homepage .streamfield a {
+    color: var(--dark-orange);
+  }
+  
+  .homepage .streamfield-column {
+    padding: 80px 20px;
+  }
+  
+  .homepage .streamfield-column p:first-child {
+    color: var(--dark-brown);
+    font-family: var(--font--primary);
+    font-size: 1.5rem;
+    line-height: 1.31;
+    margin-bottom: 30px;
+  }
+  
+  .homepage .streamfield-column p:first-child a {
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+  
+  .homepage .streamfield-column p {
+    font-size: 0.875rem;
+    line-height: 1.57;
+  }
+  
+  .homepage .streamfield-column p:last-child {
+    margin-bottom: 0;
+  }
+  
+  @media (min-width: 768px) {
+    .homepage .streamfield-column p {
+      font-size: var(--font-md);
+      line-height: 1.55;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .homepage .streamfield-column {
+      padding: 140px 0;
+    }
+  
+    .homepage .streamfield-column p:first-child {
+      font-size: 3.75rem;
+      line-height: 1.07;
+      margin-bottom: 60px;
+    }
+  }
+  
+  /* #endregion */
+  
+  /* #region -- Promo Section */
+  .homepage .promo-row {
+    padding: 40px 0 80px;
+  }
+  
+  @media (min-width: 768px) {
+    .homepage .promo-row {
+      padding-top: 80px;
+      margin-right: -45px;
+    }
+  }
+  
+  .homepage .promo h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--white);
+  }
+  
+  .homepage .promo p,
+  .homepage .promo li {
+    color: var(--white);
+  }
+  
+  .homepage .promo a {
+    color: var(--white);
+    text-decoration: underline;
+  }
+  
+  .homepage .promo {
+    background: var(--light-brown);
+    height: 100%;
+    padding: 60px 40px;
+    margin-top: 40px;
+    margin-bottom: 100px;
+  }
+  
+  .homepage .promo-text {
+    padding: 0;
+  }
+  
+  .homepage .promo figure img {
+    margin: 40px 0 -200px;
+    width: 100%;
+    height: auto;
+  }
+  
+  @media (min-width: 768px) {
+    .homepage .promo {
+      margin-top: -180px;
+      margin-right: -120px;
+      padding: 180px 60px 40px;
+    }
+  
+    .homepage .promo figure img {
+      width: calc(100% + 60px);
+      height: auto;
+      margin-right: -60px;
+      margin-bottom: -280px;
+      padding-top: 20px;
+    }
+  
+    .homepage .promo p {
+      font-size: 1.25rem;
+      line-height: 1.35;
+    }
+  }
+  
+  /* #endregion */
+  
+  /* #region -- Featured Cards Section -- */
+  .homepage .featured-cards__list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .homepage .featured-cards__title {
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+  
+  .homepage .featured-cards__link {
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    font-family: var(--font--primary);
+    margin: 0 auto;
+    width: max-content;
+    font-size: var(--font-md);
+    line-height: 1.28;
+  }
+  
+  .homepage .featured-cards__chevron-icon {
+    margin-left: 8px;
+    width: 8px;
+    height: 22px;
+    transition: transform ease 0.1s;
+  }
+  
+  .homepage .featured-cards__link:hover {
+    text-decoration: underline;
+  }
+  
+  .homepage .featured-cards__link:hover .featured-cards__chevron-icon {
+    transform: translateX(5px);
+  }
+  
+  .homepage .featured-cards__link:hover .featured-cards__chevron-icon path {
+    fill: var(--dark-orange);
+  }
+  
+  @media (min-width: 768px) {
+    .homepage .featured-cards {
+      padding-right: 50px;
+    }
+  
+    .homepage .featured-cards__link {
+      font-size: 1.5rem;
+      line-height: 30px;
+      margin: unset;
+    }
+  
+    .homepage .featured-cards__chevron-icon {
+      width: 12px;
+      height: 28px;
+      align-self: center;
+    }
+  }
+  
+  /* #endregion */
+  
+  /* #region -- Location Section -- */
+  .homepage .locations-section {
+    padding: 40px 0 20px;
+    text-align: center;
+  }
+  
+  .homepage .locations-section__title {
+    color: var(--dark);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.375rem;
+    line-height: 1.16;
+    margin-bottom: 40px;
+  }
+  
+  @media (min-width: 768px) {
+    .homepage .locations-section {
+      text-align: left;
+      padding: 120px 0 160px;
+    }
+  
+    .homepage .locations-section__title {
+      font-size: 3.75rem;
+      line-height: 1.07;
+  
+      /* Aligns title with below cards */
+      padding-left: 10px;
+    }
+  }
+  
+  /* #endregion */
+  
+  /* #region -- Blog Section -- */
+  .homepage .blog-section {
+    padding: 80px 20px 100px;
+    text-align: center;
+  }
+  
+  .homepage .blog-section__background {
+    background-color: var(--cream);
+  }
+  
+  .homepage .blog-section__title {
+    color: var(--dark-brown);
+    font-weight: 400;
+    font-size: 2.375rem;
+    line-height: 1.16;
+    margin-bottom: 60px;
+    margin-top: 0;
+  }
+  
+  .homepage .blog-section__grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr;
+  }
+  
+  @media (min-width: 566px) {
+    .homepage .blog-section__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .homepage .blog-section {
+      padding: 90px 0 110px;
+    }
+  }
+  
+  @media (min-width: 966px) {
+    .homepage .blog-section__grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  
+    .homepage .blog-section__title {
+      margin-bottom: 90px;
+      font-size: 7.5rem;
+      line-height: 1.21;
+    }
+  }
+  
+  /* #endregion */

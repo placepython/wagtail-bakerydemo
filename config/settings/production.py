@@ -10,10 +10,7 @@ https://docs.djangoproject.com/fr/5.1/ref/settings/
 
 import os
 
-import pymysql
-
 from .base import *  # noqa: F403
-from .base import BASE_DIR
 from .base import env
 
 # GENERAL
@@ -54,16 +51,6 @@ DATABASES = {"default": env.db("DJANGO_DATABASE_URL")}
 # réutilisées, ce qui permet d'améliorer les performances en réduisant le coût
 # de création de nouvelles connexions à chaque requête.
 DATABASES["default"]["CONN_MAX_AGE"] = env.int("CONN_MAX_AGE", default=60)
-
-# o2switch ne supporte pas mysqlclient: nous utilisons un driver pur python
-# qui sait se faire passer pour MySQLclient
-pymysql.install_as_MySQLdb()
-
-# Settings recommandés pour l'usage de mysql et mariadb avec django
-DATABASES['default']['OPTIONS'] = {
-    "charset": "utf8mb4",
-    'init_command': "SET NAMES 'utf8mb4' COLLATE 'utf8mb4_unicode_ci', sql_mode='STRICT_TRANS_TABLES'"
-}
 
 # SECURITE
 # La variable SECURE_PROXY_SSL_HEADER est utilisée dans Django pour indiquer
@@ -220,6 +207,14 @@ EMAIL_SUBJECT_PREFIX = env(
     default="[BakeryDemo] ",
 )
 
+# Cette configuration est utilisée pour configurer Django Vite afin de gérer
+# le développement front-end.
+DJANGO_VITE = {
+    "default": {
+        "dev_mode": env.bool("DJANGO_VITE_DEV_MODE", default=DEBUG),
+    }
+}
+
 # ADMIN
 # La variable ADMIN_URL définit l'URL personnalisée pour accéder à l'interface
 # d'administration Django. En la configurant via une variable d'environnement,
@@ -241,7 +236,9 @@ WAGTAIL_ADMIN_URL = env("DJANGO_ADMIN_URL")
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
-    "filters": {"require_debug_false": {"()": "django.utils.log.RequireDebugFalse"}},
+    "filters": {
+        "require_debug_false": {"()": "django.utils.log.RequireDebugFalse"}
+    },
     "formatters": {
         "verbose": {
             "format": "%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s",

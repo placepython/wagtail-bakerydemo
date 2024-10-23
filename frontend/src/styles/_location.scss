@@ -1,0 +1,37 @@
+/* Location list page */
+.location-list-page {
+    padding: 0 0 70px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  @media (min-width: 768px) {
+    .location-list-page {
+      padding: 50px 0 110px;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+  }
+  
+  /* Location detail page */
+  .location__meta-title {
+    font-family: var(--font--primary);
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 1.625rem;
+    line-height: 1.23;
+  }
+  
+  .location__meta-title:first-child {
+    margin-top: 0;
+  }
+  
+  .location__day {
+    font-weight: bold;
+    font-family: var(--font--secondary);
+  }
+  
+  .location__time {
+    display: block;
+  }

@@ -1,0 +1,18 @@
+{
+  "frontend/src/application/app.js": {
+    "file": "assets/app-DCz3b8P1.js",
+    "name": "app",
+    "src": "frontend/src/application/app.js",
+    "isEntry": true,
+    "css": [
+      "assets/app-C19bnFAv.css"
+    ],
+    "assets": [
+      "assets/Marcellus-Regular-86dSXJnk.woff2"
+    ]
+  },
+  "frontend/src/fonts/Marcellus-Regular.woff2": {
+    "file": "assets/Marcellus-Regular-86dSXJnk.woff2",
+    "src": "frontend/src/fonts/Marcellus-Regular.woff2"
+  }
+}

@@ -31,6 +31,7 @@ Vous pouvez exécuter cette démonstration Wagtail en utilisant uv. Si uv n'est 
 
 - Python 3.12
 - [uv](https://docs.astral.sh/uv/)
+- [Node.js pour l'installation de npm](https://nodejs.org/en/download/)
 
 ### Installation
 
@@ -42,7 +43,23 @@ uv sync --extra dev
 ```
 
 Ensuite, nous configurerons nos variables d'environnement locales. Nous utilisons dans cette démo [django-environ](https://django-environ.readthedocs.io/en/latest/) 
-pour nous aider dans cette tâche. Cette bibliothèque lit les variables d'environnement situées dans un fichier nommé `.env` au niveau supérieur du répertoire du projet. Renommez le fichier .env.dev.example en .env pour avoir un modèle avec les variables attendues. Pour la production, définir les variables dans .env.prod.exemple.
+pour nous aider dans cette tâche. Cette bibliothèque lit les variables d'environnement situées dans un fichier nommé `.env` au niveau supérieur du répertoire du projet. Renommez le fichier .env.example en .env pour avoir un modèle avec les variables attendues. Puis, définissez
+les variables suivantes:
+```bash
+## Clé secrète et activation/Désactivation du mode DEBUG
+DJANGO_SECRET_KEY=une-secrete-key
+DJANGO_DEBUG=True
+
+## Module de settings à utiliser
+DJANGO_SETTINGS_MODULE=config.settings.dev
+
+DJANGO_PRIMARY_HOST=localhost:8000
+DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1
+DJANGO_DATABASE_URL=sqlite:///bakerydemodb
+DJANGO_EMAIL_URL=consolemail:///
+DJANGO_ADMIN_URL=django-admin/
+WAGTAIL_ADMIN_URL=admin/
+```
 
 Pour configurer votre base de données et charger les données initiales, exécutez les commandes suivantes :
 ```bash
@@ -52,7 +69,13 @@ uv run python manage.py load_initial_data
 uv run python manage.py runserver
 ```
 
-Connectez-vous à l'admin avec les identifiants `admin / changeme`.
+puis dans un autre terminal:
+```bash
+npm install
+npm start
+```
+Visitez [la page d'acceuil du site de demo](http://127.0.0.1:8000/) 
+et [connectez-vous à l'admin](http://127.0.0.1:8000/admin)  avec les identifiants `admin / changeme`.
 
 # Autres remarques
 

@@ -15,6 +15,7 @@ dependencies = [
     "pymysql>=1.1.1",
     "wagtail>=6.2.2",
     "wagtail-font-awesome-svg>=1.0.1",
+    "django-vite>=3.0.5",
 ]
 
 [project.optional-dependencies]

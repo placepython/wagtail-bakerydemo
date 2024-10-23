@@ -8,10 +8,8 @@ disponible dans la doc officielle ici:
 https://docs.djangoproject.com/fr/5.1/ref/settings/
 """
 
-from bakerydemo import BASE_DIR
-from bakerydemo import env
-
-PROJECT_DIR = BASE_DIR / "bakerydemo"
+from config import BASE_DIR
+from config import env
 
 # DEBUG:
 # De base, on désactive le mode DEBUG pour éviter les oublis en production
@@ -72,7 +70,7 @@ INSTALLED_APPS = [
     "django.contrib.sitemaps",
     # Application externes
     "django_extensions",
-    # Ajouter vos propres applications ...
+    "django_vite",
 ]
 
 # GESTION DU MUTLI-SITES
@@ -106,7 +104,7 @@ MIDDLEWARE = [
 # Une chaîne représentant le chemin d’importation Python complet vers votre
 # URLconf racine, par exemple "mesapplisdjango.urls".
 # https://docs.djangoproject.com/en/dev/ref/settings/#root-urlconf
-ROOT_URLCONF = "bakerydemo.urls"
+ROOT_URLCONF = "config.urls"
 
 # TEMPLATES:
 # Une liste contenant les réglages de tous les moteurs de gabarit à utiliser
@@ -149,7 +147,7 @@ TEMPLATES = [
 # Le chemin Python complet de l’objet application WSGI que les serveurs intégrés dans Django vont
 # utiliser (par ex. runserver).
 # https://docs.djangoproject.com/fr/5.1/ref/settings/#wsgi-application
-WSGI_APPLICATION = "bakerydemo.wsgi.application"
+WSGI_APPLICATION = "config.wsgi.application"
 
 
 # BASE DE DONNEES:
@@ -317,7 +315,7 @@ STATICFILES_FINDERS = [
 # Chemin absolu de répertoire pointant vers le répertoire qui contiendra les
 # fichiers uploadés par les utilisateurs.
 # https://docs.djangoproject.com/fr/5.1/ref/settings/#media-root
-MEDIA_ROOT = env("DJANGO_MEDIA_ROOT", default=str(PROJECT_DIR / "media"))
+MEDIA_ROOT = env("DJANGO_MEDIA_ROOT", default=str(BASE_DIR / "media"))
 
 # URL qui gère les fichiers médias servis à partir de MEDIA_ROOT, utilisée pour
 # la gestion des fichiers stockés. Elle doit se terminer par une barre oblique

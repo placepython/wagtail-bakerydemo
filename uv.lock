@@ -73,6 +73,7 @@ dependencies = [
     { name = "django-environ" },
     { name = "django-extensions" },
     { name = "django-redis" },
+    { name = "django-vite" },
     { name = "pymysql" },
     { name = "wagtail" },
     { name = "wagtail-font-awesome-svg" },
@@ -102,6 +103,7 @@ requires-dist = [
     { name = "django-environ", specifier = ">=0.11.2" },
     { name = "django-extensions", specifier = ">=3.2.3" },
     { name = "django-redis", specifier = ">=5.4.0" },
+    { name = "django-vite", specifier = ">=3.0.5" },
     { name = "djhtml", marker = "extra == 'dev'", specifier = ">=3.0.6" },
     { name = "elasticsearch", marker = "extra == 'production'", specifier = ">=8.15.1" },
     { name = "pymysql", specifier = ">=1.1.1" },
@@ -417,6 +419,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/bb/24/eaccbce17355380cb3a8fe6ad92a85b76453dc1f0ecd04f48bfe8929065b/django-treebeard-4.7.1.tar.gz", hash = "sha256:846e462904b437155f76e04907ba4e48480716855f88b898df4122bdcfbd6e98", size = 294139 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/87/79/259966820614746cc4d81762edf97a53bf1e3b8e74797c010d310c6f4a8f/django_treebeard-4.7.1-py3-none-any.whl", hash = "sha256:995c7120153ab999898fe3043bbdcd8a0fc77cc106eb94de7350e9d02c885135", size = 93210 },
+]
+
+[[package]]
+name = "django-vite"
+version = "3.0.5"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "django" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/7e/14/3924390af33ea0be01f643e7aa83ec147ef65195a1a6a8bedbb07a45fe54/django_vite-3.0.5.tar.gz", hash = "sha256:431c1212e7627adc20666d150578f1a8983f043e90f3905778fb3c5c0ffe6963", size = 21383 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/5f/15/1ef43856db1636d97bc87861e7e1b8a9aa51b418585fd5e9d0219d834289/django_vite-3.0.5-py3-none-any.whl", hash = "sha256:049b74f38c999cbfcf0e2c21b254c2e059bb97bfd7e4049caf2d0f9fba0b482f", size = 19008 },
 ]
 
 [[package]]
