@@ -11,6 +11,8 @@ https://docs.djangoproject.com/fr/5.1/ref/settings/
 from config import BASE_DIR
 from config import env
 
+PROJECT_DIR = BASE_DIR / "bakerydemo"
+
 # DEBUG:
 # De base, on désactive le mode DEBUG pour éviter les oublis en production
 # https://docs.djangoproject.com/fr/5.1/ref/settings/#debug
