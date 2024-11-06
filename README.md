@@ -23,15 +23,9 @@ Cette démo est principalement destinée aux développeurs souhaitant en savoir 
 
 # Installation
 
-## Configuration avec uv
-
-Vous pouvez exécuter cette démonstration Wagtail en utilisant uv. Si uv n'est pas installé, vous pouvez l'installer en utilisant l'[installeur standalone sur le site officiel](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer). 
-
 ### Dépendances
 
 - Python 3.12
-- [uv](https://docs.astral.sh/uv/)
-- [Node.js pour l'installation de npm](https://nodejs.org/en/download/)
 
 ### Installation
 
@@ -39,11 +33,19 @@ Vous pouvez exécuter cette démonstration Wagtail en utilisant uv. Si uv n'est 
 cd ~/dev [ou votre répertoire dev préféré]
 git clone https://github.com/placepython/wagtail-backerydemo.git bakerydemo
 cd bakerydemo
-uv sync --extra dev
+py -m venv .venv # Sous windows
+python3 -m venv .venv # Sous MacOS ou Linux
+```
+
+Activez l'environnement virtuel comme vous savez le faire, puis installer les
+dépendances:
+
+```bash
+$ pip install -r requirements-dev.txt
 ```
 
 Ensuite, nous configurerons nos variables d'environnement locales. Nous utilisons dans cette démo [django-environ](https://django-environ.readthedocs.io/en/latest/) 
-pour nous aider dans cette tâche. Cette bibliothèque lit les variables d'environnement situées dans un fichier nommé `.env` au niveau supérieur du répertoire du projet. Renommez le fichier .env.example en .env pour avoir un modèle avec les variables attendues. Puis, définissez
+pour nous aider dans cette tâche. Cette bibliothèque lit les variables d'environnement situées dans un fichier nommé `.env` au niveau supérieur du répertoire du projet. **Renommez le fichier .env.example en .env** pour avoir un modèle avec les variables attendues. Puis, définissez
 les variables suivantes:
 ```bash
 ## Clé secrète et activation/Désactivation du mode DEBUG
@@ -57,23 +59,16 @@ DJANGO_PRIMARY_HOST=localhost:8000
 DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1
 DJANGO_DATABASE_URL=sqlite:///bakerydemodb
 DJANGO_EMAIL_URL=consolemail:///
-DJANGO_ADMIN_URL=django-admin/
-WAGTAIL_ADMIN_URL=admin/
 ```
 
 Pour configurer votre base de données et charger les données initiales, exécutez les commandes suivantes :
 ```bash
-uv run python manage.py migrate
-uv run python manage.py collectstatic
-uv run python manage.py load_initial_data
-uv run python manage.py runserver
+python manage.py migrate
+python manage.py collectstatic
+python manage.py load_initial_data
+python manage.py runserver
 ```
 
-puis dans un autre terminal:
-```bash
-npm install
-npm start
-```
 Visitez [la page d'acceuil du site de demo](http://127.0.0.1:8000/) 
 et [connectez-vous à l'admin](http://127.0.0.1:8000/admin)  avec les identifiants `admin / changeme`.
 
